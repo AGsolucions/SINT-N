@@ -1,0 +1,564 @@
+/* ============================================================
+   🧱 BASE GLOBAL (reset, tipografía, layout general)
+============================================================ */
+html, body {
+  margin: 0;
+  height: 100%;
+  font-family: system-ui, sans-serif;
+}
+
+/* Incluye padding y borde en el tamaño total del elemento */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* ============================================================
+   🧭 GRID PRINCIPAL DEL APP
+============================================================ */
+#app {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  grid-template-rows: 60px auto auto;
+  height: 90%;
+  grid-template-areas:
+    "header header"
+    "sidebar map"
+    "dashboard panels";
+}
+
+/* ============================================================
+   🔹 HEADER
+============================================================ */
+header {
+  grid-column: 1 / span 2;
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  background: #f9fafb;
+  position: sticky;
+  border-bottom: 1px solid #e5e7eb;
+  gap: 10px;
+  z-index: 100;
+}
+
+header h1 {
+  font-size: 18px;
+  margin: 0;
+  color: #111827;
+}
+
+header .actions {
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* ============================================================
+   🎛️ BOTONES GENERALES
+============================================================ */
+.btn {
+  padding: 8px 12px;
+  border: 1px solid #111827;
+  background: #111827;
+  color: white;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn.secondary {
+  background: white;
+  color: #111827;
+  border-color: #d1d5db;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn.tiny {
+  padding: 4px 8px;
+  font-size: 11px;
+  border-radius: 6px;
+}
+
+/* ============================================================
+   📚 SIDEBAR
+============================================================ */
+#sidebar {
+  padding: 12px;
+  border-right: 1px solid #e5e7eb;
+  overflow-y: auto;
+  background: #fff;
+  min-width: 0;
+  overflow-x: hidden;
+}
+
+.section {
+  margin-bottom: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+}
+
+.section > .title {
+  padding: 8px 10px;
+  background: #f3f4f6;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 13px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.section .content {
+  padding: 10px;
+  display: block;
+}
+
+.section.collapsed > .title .t-arrow {
+  transform: rotate(-90deg);
+}
+.section.collapsed > .content {
+  display: none;
+}
+
+/* Arrastre de sección */
+.section > .title {
+  cursor: pointer;
+  user-select: none;
+}
+.section > .title .grip {
+  font-size: 16px;
+  opacity: .5;
+  margin-right: 6px;
+  cursor: grab;
+}
+.section.dragging {
+  opacity: .6;
+  border-style: dashed;
+}
+
+/* ============================================================
+   🗺️ MAPA PRINCIPAL
+============================================================ */
+#map {
+  position: relative;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+#map > div {
+  height: calc(130vh - 60px - 220px);
+}
+
+/* ============================================================
+   📊 DASHBOARD (KPIs y paneles)
+============================================================ */
+#dashboard {
+  padding: 12px;
+  overflow-y: auto;
+  background: #fafafa;
+}
+
+/* KPIs en formato de tarjetas */
+.kpis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.card .label {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.card .value {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Pie de página de tarjetas o secciones */
+.footer {
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 10px;
+}
+
+/* Leyenda de gráficos */
+.legend {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* ============================================================
+   📱 RESPONSIVE DESIGN (para tablets y móviles)
+============================================================ */
+@media (max-width: 1024px) {
+  #app {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+
+  #sidebar {
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  #map > div {
+    height: 400px;
+  }
+
+  #charts {
+    grid-template-columns: 1fr;
+  }
+
+  .kpis {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ============================================================
+   📈 CARRUSEL DE CHARTS
+============================================================ */
+
+/* Contenedor general del carrusel */
+.carousel {
+  position: relative;
+  background: transparent;
+  margin-top: 8px;
+  user-select: none;
+  overflow: hidden;
+}
+
+/* Track que contiene los slides (se desliza horizontalmente) */
+.carousel-track {
+  display: flex;
+  width: 100%;
+  transform: translateX(0);
+  will-change: transform;
+
+  /* 🎯 Mejora: transición más fluida (rebote tipo móvil) */
+  transition: transform 0.6s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+/* Slide individual ocupa todo el ancho */
+.slide {
+  min-width: 100%;
+  padding: 0;
+
+  /* 🎯 Mejora: animación de enfoque activo */
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  transform: scale(0.96);
+  opacity: 0.8;
+}
+.slide.active {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* ============================================================
+   📊 Tarjetas de gráficos dentro del carrusel
+============================================================ */
+.slide .chart,
+.slide canvas {
+  display: block;
+  width: 100%;
+}
+
+.slide .chart {
+  position: relative;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 8px;
+  min-height: 240px;
+
+  /* 🎯 Mejora visual al pasar el mouse */
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.slide .chart:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.slide .chart canvas {
+  height: 200px !important;
+  background: transparent;
+}
+
+/* ============================================================
+   📋 Botón de copiar gráfico
+============================================================ */
+.icon-btn.copy {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 28px;
+  height: 28px;
+  border: 1px solid #e5e7eb;
+  background: #ffffffcc;
+  border-radius: 6px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.icon-btn.copy:hover {
+  background: #fff;
+  transform: translateY(-1px);
+}
+.icon-btn.copy svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* 🎯 Feedback visual al copiar */
+.chart.copied {
+  animation: copiedBounce 0.3s ease;
+}
+@keyframes copiedBounce {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+/* ============================================================
+   ⬅️➡️ Flechas de navegación del carrusel
+============================================================ */
+.car-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 1px solid #e5e7eb;
+  background: #ffffffd9;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 0;
+
+  /* 🕶️ Ocultar por defecto */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* Efecto hover en flechas */
+.car-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  transform: scale(1.1);
+}
+
+/* Flechas izquierda/derecha */
+.car-btn.prev::before {
+  content: '←';
+  font-size: 20px;
+}
+.car-btn.next::before {
+  content: '→';
+  font-size: 20px;
+}
+
+/* Posiciones */
+.car-btn.prev { left: 10px; }
+.car-btn.next { right: 10px; }
+
+/* ============================================================
+   🧠 MEJORA: Mostrar flechas solo al hacer hover en bordes
+============================================================ */
+.carousel-container {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Áreas invisibles laterales para activar flechas */
+.carousel-container::before,
+.carousel-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  z-index: 10;
+}
+.carousel-container::before { left: 0; }
+.carousel-container::after  { right: 0; }
+
+/* Mostrar flecha izquierda al hacer hover en izquierda */
+.carousel-container:hover::before ~ .car-btn.prev {
+  opacity: 1;
+  pointer-events: auto;
+}
+/* Mostrar flecha derecha al hacer hover en derecha */
+.carousel-container:hover::after ~ .car-btn.next {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ============================================================
+   🔘 Dots de navegación del carrusel
+============================================================ */
+.car-dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.car-dots button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #d1d5db;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.car-dots button.active {
+  background: #111827;
+}
+
+.car-dots button:hover {
+  background: #2563eb;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.2);
+}
+
+/* ============================================================
+   📊 PANEL "Zonas por hora" (40/60 layout)
+============================================================ */
+#time-heat-zones {
+  display: grid;
+  grid-template-columns: 2fr 3fr;  /* 40/60 distribución */
+  gap: 12px;
+  margin-top: 8px;
+}
+
+#time-heat-zones > .panel {
+  min-width: 50px;        /* permite que se encojan correctamente */
+  overflow-x: hidden;
+}
+
+/* Responsive para pantallas más pequeñas */
+@media (max-width: 1280px) {
+  #time-heat-zones {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   🧩 PANEL GENÉRICO (estilo tarjetas)
+============================================================ */
+.panel {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.panel-title {
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+/* ============================================================
+   🧾 CARRUSEL DE INFORMACIÓN DE NEGOCIOS
+============================================================ */
+#business-info-carousel {
+  width: 100%;
+}
+
+/* ============================================================
+   🧩 TARJETAS DE NEGOCIOS (componente reutilizable)
+============================================================ */
+.business-card {
+  flex: 0 0 100%;
+  padding: 15px;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Compacta y consistente */
+.biz-card {
+  padding: 12px;
+  max-width: 100%;
+}
+
+/* Títulos (máx 1–2 líneas, truncados) */
+.biz-title {
+  font-weight: 600;
+  margin-bottom: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.biz-subtitle {
+  font-size: 12px;
+  opacity: .8;
+  margin-bottom: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Contenido con altura controlada + scroll */
+.biz-rows {
+  max-height: 260px;
+  overflow: auto;
+}
+
+/* Filas de datos compactas en dos columnas */
+.biz-rows .row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 10px;
+  padding: 4px 0;
+  align-items: start;
+}
+
+.biz-rows .row .k {
+  opacity: .75;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.biz-rows .row .v {
+  text-align: right;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Scrollbar pequeño (solo en navegadores WebKit) */
+.biz-rows::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}

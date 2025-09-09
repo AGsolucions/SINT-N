@@ -1,0 +1,504 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.6221,
+          -1.2495
+        ]
+      },
+      "properties": {
+        "ciiu": "C47",
+        "nombre": "Comercial Ambato 1",
+        "genero": "hombre",
+        "rubro": "Comercio",
+        "provincia": "Tungurahua",
+        "canton": "Ambato",
+        "parroquia": "Atocha – Ficoa",
+        "tipo_empresa": "sociedad",
+        "tiene_ruc": "true",
+        "regimen_tributario": "general",
+        "escritura_publica": "true",
+        "registro_mercantil": "true",
+        "tiene_patente": "true",
+        "anios_funcionando_sin_patente": "0",
+        "afiliados_min": 2,
+        "afiliados_max": 4,
+        "contratos_escritos": "todos",
+        "fact_clientes_min": 80,
+        "fact_clientes_max": 100,
+        "instalacion": "fija",
+        "tipo_venta": [
+          "ropa",
+          "relojes"
+        ],
+        "mobiliario_tipo": "vitrina",
+        "mobiliario_estado": "bueno",
+        "equipamiento_sombrilla": "true",
+        "equipamiento_mantel": "true",
+        "area_ocupada_m2": 12,
+        "tamanio_min": 3,
+        "tamanio_max": 5,
+        "horas_min": 40,
+        "horas_max": 60,
+        "anio": 2015,
+        "franja": "mañana",
+        "inspecciones": [
+          "SRI",
+          "IESS",
+          "municipio"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.6187,
+          -1.2579
+        ]
+      },
+      "properties": {
+        "ciiu": "G56",
+        "nombre": "Jugos Celiano",
+        "genero": "mujer",
+        "rubro": "Servicios",
+        "provincia": "Tungurahua",
+        "canton": "Ambato",
+        "parroquia": "Celiano Monge",
+        "tipo_empresa": "familiar",
+        "tiene_ruc": "false",
+        "regimen_tributario": "",
+        "escritura_publica": "false",
+        "registro_mercantil": "false",
+        "tiene_patente": "false",
+        "anios_funcionando_sin_patente": "1",
+        "afiliados_min": 0,
+        "afiliados_max": 1,
+        "contratos_escritos": "ninguno",
+        "fact_clientes_min": 0,
+        "fact_clientes_max": 10,
+        "instalacion": "fija",
+        "tipo_venta": [
+          "bebidas",
+          "dulces"
+        ],
+        "mobiliario_tipo": "mesa",
+        "mobiliario_estado": "regular",
+        "equipamiento_sombrilla": "false",
+        "equipamiento_mantel": "false",
+        "area_ocupada_m2": 4,
+        "tamanio_min": 1,
+        "tamanio_max": 2,
+        "horas_min": 20,
+        "horas_max": 30,
+        "anio": 2022,
+        "franja": "tarde",
+        "inspecciones": []
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.6302,
+          -1.2523
+        ]
+      },
+      "properties": {
+        "ciiu": "G56",
+        "nombre": "Móvil Pishilata",
+        "genero": "hombre",
+        "rubro": "Comercio",
+        "provincia": "Tungurahua",
+        "canton": "Ambato",
+        "parroquia": "Pishilata",
+        "tipo_empresa": "individual",
+        "tiene_ruc": "false",
+        "regimen_tributario": "",
+        "escritura_publica": "false",
+        "registro_mercantil": "false",
+        "tiene_patente": "false",
+        "anios_funcionando_sin_patente": "2",
+        "afiliados_min": 1,
+        "afiliados_max": 10,
+        "contratos_escritos": "ninguno",
+        "fact_clientes_min": 0,
+        "fact_clientes_max": 5,
+        "instalacion": "móvil",
+        "tipo_venta": [
+          "comida",
+          "bebidas"
+        ],
+        "mobiliario_tipo": "carretilla",
+        "mobiliario_estado": "regular",
+        "equipamiento_sombrilla": "false",
+        "equipamiento_mantel": "false",
+        "area_ocupada_m2": 2,
+        "tamanio_min": 1,
+        "tamanio_max": 1,
+        "horas_min": 15,
+        "horas_max": 25,
+        "anio": 2020,
+        "franja": "noche",
+        "inspecciones": [
+          "municipio"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.6159,
+          -1.2451
+        ]
+      },
+      "properties": {
+        "ciiu": "C47",
+        "nombre": "Servicios Loreto",
+        "genero": "mujer",
+        "rubro": "Servicios",
+        "provincia": "Tungurahua",
+        "canton": "Ambato",
+        "parroquia": "Huachi Loreto",
+        "tipo_empresa": "sociedad",
+        "tiene_ruc": "true",
+        "regimen_tributario": "RIMPE",
+        "escritura_publica": "false",
+        "registro_mercantil": "true",
+        "tiene_patente": "false",
+        "anios_funcionando_sin_patente": "3",
+        "afiliados_min": 1,
+        "afiliados_max": 3,
+        "contratos_escritos": "algunos",
+        "fact_clientes_min": 30,
+        "fact_clientes_max": 60,
+        "instalacion": "fija",
+        "tipo_venta": [
+          "celular",
+          "gafas"
+        ],
+        "mobiliario_tipo": "stand",
+        "mobiliario_estado": "bueno",
+        "equipamiento_sombrilla": "true",
+        "equipamiento_mantel": "false",
+        "area_ocupada_m2": 8,
+        "tamanio_min": 2,
+        "tamanio_max": 4,
+        "horas_min": 35,
+        "horas_max": 50,
+        "anio": 2018,
+        "franja": "mañana",
+        "inspecciones": [
+          "SRI"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.6275,
+          -1.2418
+        ]
+      },
+      "properties": {
+        "ciiu": "C10",
+        "nombre": "Artesanías Matriz",
+        "genero": "hombre",
+        "rubro": "Comercio",
+        "provincia": "Tungurahua",
+        "canton": "Ambato",
+        "parroquia": "La Matriz",
+        "tipo_empresa": "individual",
+        "tiene_ruc": "true",
+        "regimen_tributario": "general",
+        "escritura_publica": "true",
+        "registro_mercantil": "false",
+        "tiene_patente": "true",
+        "anios_funcionando_sin_patente": "0",
+        "afiliados_min": 0,
+        "afiliados_max": 0,
+        "contratos_escritos": "ninguno",
+        "fact_clientes_min": 10,
+        "fact_clientes_max": 20,
+        "instalacion": "fija",
+        "tipo_venta": [
+          "porcelana",
+          "miscelanea"
+        ],
+        "mobiliario_tipo": "mesa",
+        "mobiliario_estado": "bueno",
+        "equipamiento_sombrilla": "false",
+        "equipamiento_mantel": "true",
+        "area_ocupada_m2": 6,
+        "tamanio_min": 1,
+        "tamanio_max": 2,
+        "horas_min": 30,
+        "horas_max": 45,
+        "anio": 2012,
+        "franja": "tarde",
+        "inspecciones": [
+          "bomberos"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.6212,
+          -1.2386
+        ]
+      },
+      "properties": {
+        "ciiu": "G47",
+        "nombre": "Kiosco Península",
+        "genero": "mujer",
+        "rubro": "Comercio",
+        "provincia": "Tungurahua",
+        "canton": "Ambato",
+        "parroquia": "La Península",
+        "tipo_empresa": "familiar",
+        "tiene_ruc": "false",
+        "regimen_tributario": "",
+        "escritura_publica": "false",
+        "registro_mercantil": "false",
+        "tiene_patente": "true",
+        "anios_funcionando_sin_patente": "5",
+        "afiliados_min": 0,
+        "afiliados_max": 1,
+        "contratos_escritos": "algunos",
+        "fact_clientes_min": 5,
+        "fact_clientes_max": 40,
+        "instalacion": "fija",
+        "tipo_venta": [
+          "dulces",
+          "periodicos"
+        ],
+        "mobiliario_tipo": "kiosco",
+        "mobiliario_estado": "regular",
+        "equipamiento_sombrilla": "true",
+        "equipamiento_mantel": "false",
+        "area_ocupada_m2": 3,
+        "tamanio_min": 1,
+        "tamanio_max": 3,
+        "horas_min": 25,
+        "horas_max": 35,
+        "anio": 2019,
+        "franja": "noche",
+        "inspecciones": []
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.6358,
+          -1.2467
+        ]
+      },
+      "properties": {
+        "ciiu": "C56",
+        "nombre": "Auto Izamba",
+        "genero": "hombre",
+        "rubro": "Servicios",
+        "provincia": "Tungurahua",
+        "canton": "Ambato",
+        "parroquia": "Huachi Chico",
+        "tipo_empresa": "individual",
+        "tiene_ruc": "true",
+        "regimen_tributario": "RIMPE",
+        "escritura_publica": "false",
+        "registro_mercantil": "false",
+        "tiene_patente": "false",
+        "anios_funcionando_sin_patente": "1",
+        "afiliados_min": 0,
+        "afiliados_max": 0,
+        "contratos_escritos": "ninguno",
+        "fact_clientes_min": 0,
+        "fact_clientes_max": 0,
+        "instalacion": "otro",
+        "tipo_venta": [
+          "miscelanea",
+          "herramientas"
+        ],
+        "mobiliario_tipo": "auto",
+        "mobiliario_estado": "malo",
+        "equipamiento_sombrilla": "false",
+        "equipamiento_mantel": "false",
+        "area_ocupada_m2": 10,
+        "tamanio_min": 1,
+        "tamanio_max": 2,
+        "horas_min": 10,
+        "horas_max": 20,
+        "anio": 2023,
+        "franja": "mañana",
+        "inspecciones": [
+          "municipio",
+          "salud"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.6123,
+          -1.2542
+        ]
+      },
+      "properties": {
+        "ciiu": "C47",
+        "nombre": "Cuero Totoras",
+        "genero": "mujer",
+        "rubro": "Comercio",
+        "provincia": "Tungurahua",
+        "canton": "Ambato",
+        "parroquia": "Totoras",
+        "tipo_empresa": "sociedad",
+        "tiene_ruc": "true",
+        "regimen_tributario": "general",
+        "escritura_publica": "true",
+        "registro_mercantil": "true",
+        "tiene_patente": "false",
+        "anios_funcionando_sin_patente": "0",
+        "afiliados_min": 4,
+        "afiliados_max": 6,
+        "contratos_escritos": "algunos",
+        "fact_clientes_min": 60,
+        "fact_clientes_max": 90,
+        "instalacion": "fija",
+        "tipo_venta": [
+          "bolsos",
+          "calzado"
+        ],
+        "mobiliario_tipo": "vitrina",
+        "mobiliario_estado": "bueno",
+        "equipamiento_sombrilla": "true",
+        "equipamiento_mantel": "false",
+        "area_ocupada_m2": 14,
+        "tamanio_min": 4,
+        "tamanio_max": 7,
+        "horas_min": 45,
+        "horas_max": 70,
+        "anio": 2010,
+        "franja": "tarde",
+        "inspecciones": [
+          "SRI",
+          "IESS",
+          "laboral"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.6199,
+          -1.2434
+        ]
+      },
+      "properties": {
+        "ciiu": "S10",
+        "nombre": "Juguetes Merced",
+        "genero": "hombre",
+        "rubro": "Comercio",
+        "provincia": "Tungurahua",
+        "canton": "Ambato",
+        "parroquia": "La Merced",
+        "tipo_empresa": "familiar",
+        "tiene_ruc": "false",
+        "regimen_tributario": "",
+        "escritura_publica": "false",
+        "registro_mercantil": "false",
+        "tiene_patente": "false",
+        "anios_funcionando_sin_patente": "2",
+        "afiliados_min": 0,
+        "afiliados_max": 0,
+        "contratos_escritos": "ninguno",
+        "fact_clientes_min": 0,
+        "fact_clientes_max": 0,
+        "instalacion": "móvil",
+        "tipo_venta": [
+          "juguetes",
+          "cds"
+        ],
+        "mobiliario_tipo": "triciclo",
+        "mobiliario_estado": "malo",
+        "equipamiento_sombrilla": "false",
+        "equipamiento_mantel": "false",
+        "area_ocupada_m2": 1,
+        "tamanio_min": 1,
+        "tamanio_max": 1,
+        "horas_min": 10,
+        "horas_max": 15,
+        "anio": 2021,
+        "franja": "noche",
+        "inspecciones": []
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.6266,
+          -1.2511
+        ]
+      },
+      "properties": {
+        "ciiu": "G46",
+        "nombre": "Hierbas Quisapincha",
+        "genero": "mujer",
+        "rubro": "Servicios",
+        "provincia": "Tungurahua",
+        "canton": "Ambato",
+        "parroquia": "La Matriz",
+        "tipo_empresa": "individual",
+        "tiene_ruc": "true",
+        "regimen_tributario": "RIMPE",
+        "escritura_publica": "true",
+        "registro_mercantil": "false",
+        "tiene_patente": "true",
+        "anios_funcionando_sin_patente": "0",
+        "afiliados_min": 0,
+        "afiliados_max": 0,
+        "contratos_escritos": "todos",
+        "fact_clientes_min": 70,
+        "fact_clientes_max": 100,
+        "instalacion": "fija",
+        "tipo_venta": [
+          "hierbas"
+        ],
+        "mobiliario_tipo": "stand",
+        "mobiliario_estado": "bueno",
+        "equipamiento_sombrilla": "false",
+        "equipamiento_mantel": "true",
+        "area_ocupada_m2": 5,
+        "tamanio_min": 2,
+        "tamanio_max": 3,
+        "horas_min": 35,
+        "horas_max": 48,
+        "anio": 2019,
+        "franja": "mañana",
+        "inspecciones": [
+          "medio_ambiente",
+          "salud"
+        ]
+      }
+    }
+  ]
+}
