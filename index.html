@@ -1,0 +1,102 @@
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SINT-NU • Observatorio Económico Territorial</title>
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon" />
+    <link href="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css" rel="stylesheet" />
+    <script src="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>🗺️ SINT-NU • Observatorio Económico Territorial</h1>
+        <div class="actions">
+          <button id="btnClearImported" class="btn">Restablecer</button>
+        </div>
+      </header>
+
+      <aside id="sidebar">
+        <div class="filter-section">
+          <label for="f_provincia">Provincia</label>
+          <select id="f_provincia">
+            <option value="Tungurahua">Tungurahua</option>
+          </select>
+        </div>
+
+        <div class="filter-section">
+          <label for="f_canton">Cantón</label>
+          <select id="f_canton">
+            <!-- Cantones se llenarán dinámicamente -->
+          </select>
+        </div>
+
+        <div class="filter-section">
+          <label for="f_parroquia">Parroquia</label>
+          <select id="f_parroquia">
+            <!-- Parroquias se llenarán dinámicamente -->
+          </select>
+        </div>
+        <div class="filter-section">
+          <label for="f_genero">Género</label>
+          <select id="f_genero">
+            <option value="hombre">Hombre</option>
+            <option value="mujer">Mujer</option>
+            <option value="__all__">Todos</option>
+          </select>
+        </div>
+      </aside>
+
+      <section id="map">
+        <div id="mapView"></div>
+      </section>
+
+      <section id="dashboard">
+        <div class="kpis">
+          <div class="card"><div class="label">Negocios visibles</div><div class="value" id="kpi_total">—</div></div>
+          <div class="card"><div class="label">% Formalidad</div><div class="value" id="kpi_formal">—</div></div>
+          <div class="card"><div class="label">% con RUC</div><div class="value" id="kpi_ruc">—</div></div>
+          <div class="card"><div class="label">% con Patente</div><div class="value" id="kpi_pat">—</div></div>
+        </div>
+        <div id="charts" class="carousel">
+          <div class="carousel-track" id="chartsTrack">
+            <div class="slide"><canvas id="chartStatus"></canvas></div>
+            <div class="slide"><canvas id="chartRubro"></canvas></div>
+          </div>
+          <button class="car-btn prev" aria-label="Anterior">‹</button>
+          <button class="car-btn next" aria-label="Siguiente">›</button>
+          <div class="car-dots" id="chartsDots"></div>
+        </div>
+        <div class="footer">
+          Sistema Digital Interactivo para Inteligencia Territorial.
+        </div>
+      </section>
+
+      <section id="time-heat-zones">
+        <div class="panel timeline">
+          <div class="panel-title">Evolución temporal</div>
+          <canvas id="chartTimeline" height="230"></canvas>
+        </div>
+
+        <!-- Aquí reemplazamos la sección de "Zonas" por el carrusel -->
+        <div class="panel business-carousel">
+          <div class="panel-title">Negocios</div>
+          <section id="business-info-carousel" class="carousel">
+            <div class="carousel-track" id="carouselTrack">
+            <!-- Tarjetas -->
+            </div>
+            <button class="car-btn prev" id="prevButton" aria-label="Anterior">←</button>
+            <button class="car-btn next" id="nextButton" aria-label="Siguiente">→</button>
+            <div class="car-dots" id="carouselDots"></div>
+          </section>
+        </div>
+      </section>
+    <script type="module" src="assets/js/filters.min.js"></script>
+    <script type="module" src="assets/js/main.min.js"></script>
+  </body>
+</html>

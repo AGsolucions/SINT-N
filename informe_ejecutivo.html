@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <title>Informe Ejecutivo SINT-NU</title>
+    <style>
+      body {
+        font-family: 'Arial', sans-serif;
+        padding: 20px;
+        max-width: 900px;
+        margin: auto;
+      }
+      h1 {
+        font-size: 24px;
+        text-align: center;
+        color: #1a73e8;
+      }
+      .section {
+        margin-bottom: 30px;
+      }
+      .section h2 {
+        font-size: 20px;
+        color: #333;
+        border-bottom: 2px solid #1a73e8;
+        padding-bottom: 5px;
+        margin-bottom: 20px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+      }
+      th, td {
+        padding: 10px;
+        border: 1px solid #ddd;
+        text-align: left;
+      }
+      th {
+        background-color: #f4f6f8;
+      }
+      .footer {
+        font-size: 12px;
+        color: #6b7280;
+        text-align: center;
+        margin-top: 30px;
+      }
+      .muted {
+        font-size: 12px;
+        color: #6b7280;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Informe Ejecutivo SINT-NU</h1>
+    <div class="muted">Generado: {{generatedDate}}</div>
+
+    <div class="section">
+      <h2>Resumen de Negocios Filtrados</h2>
+      <p><strong>Negocios visibles:</strong> {{totalNegocios}}</p>
+      <p><strong>% con RUC:</strong> {{rucPercentage}}%</p>
+      <p><strong>% con Patente:</strong> {{patentePercentage}}%</p>
+      <p><strong>Promedio de tamaño de negocios:</strong> {{averageSize}} empleados</p>
+      <p><strong>Promedio de clientes que exigen factura:</strong> {{averageInvoicePercentage}}%</p>
+    </div>
+
+    <div class="section">
+      <h2>Filtros Aplicados</h2>
+      <pre>{{filtersApplied}}</pre>
+    </div>
+
+    <div class="section">
+      <h2>Primeros 20 Negocios Filtrados</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Rubro</th>
+            <th>Estatus</th>
+            <th>RUC</th>
+            <th>Patente</th>
+            <th>% Clientes Exigen Factura</th>
+            <th>Tamaño del Negocio</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{businessRows}}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="footer">
+      <p>Este informe fue generado a partir de los filtros aplicados en el sistema SINT-NU</p>
+    </div>
+  </body>
+</html>
