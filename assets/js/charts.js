@@ -1,4 +1,4 @@
-import { parseBool } from './utils.js';
+import { parseBool } from './utils.min.js';
 
 let charts = {};
 
